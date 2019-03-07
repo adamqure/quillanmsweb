@@ -1,0 +1,22 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    padding: 20px 100px 0px 100px;
+    background: #f3f3f3;
+}
+
+nav {
+  margin: -20px -100px 0px -100px;
+}
+
+div {
+  background-image: url(home_background.jpg);
+}
+
+footer {
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

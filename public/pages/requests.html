@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css" />
+  <title>Quillan Mobile Solutions</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../index.html">Quillan Mobile Solutions</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- <a class="nav-item nav-link active" href="../index.html">Home</a> -->
+        <a class="nav-item nav-link active" href="requests.html">Requests <span class="sr-only">(current)</span></a>
+        <!-- <a class="nav-item nav-link active" href="contact.html">Contact</a> -->
+      </div>
+    </div>
+  </nav>
+  <div id="app">
+    <h1>Application Request System</h1>
+    <form @submit.prevent="addRequest">
+      <input v-model="addedName" placeholder="Name"></p>
+      <input v-model="addedRequestName" placeholder="Application Title"></p>
+      <input v-model="addedCompensation" placeholder="How much will you pay?"></p>
+      <textarea v-model="addedRequestDescription"></textarea>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <br />
+    <br />
+    <h3>Open Requests</h3>
+    <div v-for="request in requests">
+      <hr>
+      <div class="request">
+        <div class="requestData">
+          <h4>{{request.projectname}}</h4>
+          <p>{{request.projectdescription}}</p>
+          <p><i>-- {{request.name}} - Compensation: {{request.compensation}}</i></p>
+        </div>
+        <div class="delete">
+          <button @click="deleteRequest(request)" class="delete">Take Request</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+</body>
+
+<footer>
+  <p>https://github.com/adamqure/quillanmobilesolutions.git</p>
+</footer>
+
+</html>
